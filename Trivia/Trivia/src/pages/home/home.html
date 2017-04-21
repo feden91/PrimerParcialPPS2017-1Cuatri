@@ -15,6 +15,9 @@
     <ion-label fixed>Nombre</ion-label>
     <ion-input type="text" value=""></ion-input>
   </ion-item>
-
-  <button ion-button secondary menuToggle>Ingresar</button>
+<ion-item *ngFor="let item of items | async">
+  {{item.nombre}}
+  
+   </ion-item>
+  <button ion-button secondary menuToggle (click)="prueba()">Ingresar</button>
 </ion-content>
