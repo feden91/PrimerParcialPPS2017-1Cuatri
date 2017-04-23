@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Chat de {{usuario}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label stacked> mensaje</ion-label>
+  <ion-input [(ngModel)]="mensaje" type="text" placeholder="ingrese su mensaje"></ion-input>
+  </ion-item>
+
+  <button block (click)="EnviarMensaje()">Enviar Mensaje </button>
+
+  <ul>
+    <li class="text" *ngFor="let item of listadoDeMensajes | async">
+   <h5> {{item.usuario}}  </h5>
+<h2>{{item.mensaje}}  </h2>
+    </li>
+    </ul>
+  <button ion-button secondary menuToggle>Toggle Menu</button>
+</ion-content>
