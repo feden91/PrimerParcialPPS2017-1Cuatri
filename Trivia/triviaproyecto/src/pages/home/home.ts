@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
+import {juegoPage } from '../juego/juego';
+import { MyData } from '../../providers/my-data';
 
 @Component({
   selector: 'page-home',
@@ -8,23 +10,35 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 })
 export class HomePage {
 
-  usuario:string
-  mensaje:string
+  Usuario:string
+  private preguntasJSON:any = [];
 
-  listadoDeMensajes: FirebaseListObservable<any[]>;
+  listadoDeUsuarios: FirebaseListObservable<any[]>;
 
 
-  constructor(public navCtrl: NavController,af:AngularFire) {
+  constructor(public navCtrl: NavController,af:AngularFire, private servicio: MyData) {
 
-    this.listadoDeMensajes=af.database.list('/mensajes');
-    this.usuario="anonimo";
+this.servicio.traerPreguntas().subscribe(
+      datos => this.preguntasJSON = datos,
+      error => console.error(error));
+    
 
   }
-EnviarMensaje(){
+Acceder(Usuario){
 
-this.listadoDeMensajes.push({usuario:this.usuario,mensaje:this.mensaje});
-this.mensaje="";
+this.Usuario=Usuario;
+this.navCtrl.push(juegoPage, {
+      Usuario : this.Usuario,
+      preguntasArray: this.preguntasJSON
+    });
+
+//this.listadoDeUsuarios.push({Usuario:this.Usuario});
+//this.mensaje="";
 
 
 }
+
+
+ 
+
 }

@@ -5,6 +5,10 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { juegoPage } from '../pages/juego/juego';
+import { juegoPage2 } from '../pages/juego2/juego2';
+import { juegoPage3 } from '../pages/juego3/juego3';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +30,10 @@ apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    juegoPage,
+    juegoPage2,
+    juegoPage3
   ],
   imports: [
     BrowserModule,
@@ -37,7 +44,10 @@ apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    juegoPage,
+    juegoPage2,
+    juegoPage3
   ],
   providers: [
     StatusBar,

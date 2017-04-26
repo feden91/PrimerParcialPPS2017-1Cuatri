@@ -3,19 +3,17 @@ import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-import { juegoPage } from '../pages/juego/juego';
-import { juegoPage2 } from '../pages/juego2/juego2';
-import { juegoPage3 } from '../pages/juego3/juego3';
+import { Identificarse } from '../pages/Identificarse/Identificarse';
 
+import { AcercaDe } from '../pages/acerca-de/acerca-de';
+import {ppot}from '../pages/PiedraPapelOTijera/ppot';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = Identificarse;
 
   pages: Array<{title: string, component: any}>;
 
@@ -24,9 +22,9 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      { title: 'juego', component: juegoPage }
+      { title: 'Identificarse', component: Identificarse },
+      { title: 'Piedra Papel o Tijera', component: ppot },
+      { title: 'AcercaDe', component: AcercaDe }
     ];
 
   }

@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Piedra Papel O Tijera</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    
+    <button ion-button outline full></button>
+    {{value}}
+    <button ion-button full (click)=jugar(1)>Piedra</button>
+    <button ion-button color="danger" full (click)=jugar(2)>Papel</button>
+    <button ion-button color="dark"  full (click)=jugar(3)>Tijera</button>
+</ion-content>
