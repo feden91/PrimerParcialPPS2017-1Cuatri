@@ -9,9 +9,19 @@
 
 <ion-content>
     
-    <button ion-button outline full></button>
+    <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon [name]="item.icon" item-left></ion-icon>
+      
+     
+    </button>
+  </ion-list>
+  
+    
+    
     {{value}}
-    <button ion-button full (click)=jugar(1)>Piedra</button>
-    <button ion-button color="danger" full (click)=jugar(2)>Papel</button>
-    <button ion-button color="dark"  full (click)=jugar(3)>Tijera</button>
+    
+    <button ion-button full>Pi</button>
+    <button ion-button color="danger" full (click)="jugar()">Pa</button>
+    <button ion-button color="dark"  full>Ti</button>
 </ion-content>

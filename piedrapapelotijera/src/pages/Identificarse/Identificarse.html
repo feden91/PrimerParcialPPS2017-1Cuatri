@@ -9,9 +9,9 @@
 
 <ion-content padding>
   <ion-item>
-    <ion-label floating>Nombre</ion-label>
-    <ion-input type="text" value=""></ion-input>
+    <ion-label floating>Ingrese Nombre</ion-label>
+    <ion-input type="text" [(ngModel)] = "usuario.nombre"></ion-input>
   </ion-item>
-<button ion-button color="dark" round>Acceder</button>
+<button ion-button color="dark"(click) ="Ingreso()" value="Jugar" round>Acceder</button>
   
 </ion-content>
