@@ -6,7 +6,7 @@
     <ion-title>Piedra Papel O Tijera</ion-title>
   </ion-navbar>
 </ion-header>
-
+{{ronda}}
 <ion-content>
     
     <ion-list>
@@ -17,11 +17,11 @@
     </button>
   </ion-list>
   
+     <div align="center" *ngIf="vMaquina">
     
-    
-    {{value}}
-    
-    <button ion-button full>Pi</button>
-    <button ion-button color="danger" full (click)="jugar()">Pa</button>
-    <button ion-button color="dark"  full>Ti</button>
+    {{jugo}}
+    </div>
+    <button ion-button full (click)="maquina('Piedra')">Piedra</button>
+    <button ion-button color="danger" full (click)="maquina('Papel')">Papel</button>
+    <button ion-button color="dark"  full (click)="maquina('Tijera')">Tijera</button>
 </ion-content>

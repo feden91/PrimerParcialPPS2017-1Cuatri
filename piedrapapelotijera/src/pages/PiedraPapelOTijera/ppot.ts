@@ -7,37 +7,175 @@ import { NavController, NavParams } from 'ionic-angular';
 
 })
 export class ppot {
-  selectedItem: any;
-  value="";
- index=0;
+  ronda:any;
+ cantRondas:any;
+ puntosUser:number;
+ puntosMaq:number;
+ puntuacion:any;
+gano:any;
+ramOpUser=["piedra","papel","tijera"];
+opMaq:any;
+num:any;
+imgMaq:any;
+jugo:any;
+vJuego:boolean;
+vMaquina:boolean;
+rondas:number;
+ jg:any;
+  usuario = { nombre:'',
+        Puntuacion:0,
+        puntosUser:0,
+        puntosMaq:0,
+        gano:false};
 
   // items: Array<{title: string}>;
  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
-
+  
     // Let's populate this page with some filler content for funzies
       
 }
-jugar(){  
 
-  this.index=Math.random();
-  if(this.index=1){
 
-  this.value="piedra";
+  ionViewDidLoad(){
+    this.ronda = "preparese para jugar";
+    this.puntosMaq=0;
+    this.puntosUser=0;
+     this.imgMaq="assets/img/maquina.png";
+     this.jugo= "LA MAQUINA!"
+            this.rondas=0;
+     setTimeout(()=>{
+           this.ronda = "Primera ronda!";
+            this.vJuego=true;
+            this.vMaquina =true;
+          },2000);
+          console.info(this.rondas);
   }
-if(this.index=3){
+  maquina(queJugo){
+this.vJuego=false;
+this.jugo = "La maquina jugo...";
+this.ComprobarJuego(queJugo);
+  if(this.rondas==1){
+   setTimeout(()=>{
+           this.ronda = "Segunda ronda!";
+             
+     this.jugo= "LA MAQUINA!"
+            this.vJuego=true;
+          },2000);
+        }else  if(this.rondas==2){
+   setTimeout(()=>{
+           this.ronda = "Tercera ronda!";
+             
+     this.jugo= "LA MAQUINA!"
+            this.vJuego=true;
+          },2000);
 
-  this.value="papel";
-  }
-if(this.index=2){
+        }else if(this.rondas==3){
+   setTimeout(()=>{
+           this.ronda = "RONDA FINAL!!";
+             
+     this.jugo= "LA MAQUINA!"
+            this.vJuego=true;
+          },2000);
 
-  this.value="tijera";
-  }
+        }else  if(this.rondas==4){
+   setTimeout(()=>{
+           this.ronda = "FINAL DEL JUEGO!!";
+             
+     this.jugo= "LA MAQUINA!"
+            this.vJuego=true;
+          },2000);
 
+        }
+}
 
-return this.value;
+ComprobarJuego(quejuego){
+  this.rondas=this.rondas+1;
+ this.num = Math.floor(Math.random() * 3);  
+ this.opMaq=this.ramOpUser[this.num];
+ console.log(this.opMaq);
+
+ if(quejuego=="piedra")
+        {
+  // this.imgElect="assets/img/piedra.jpg";
+          if (this.opMaq=="piedra")
+          {
+              this.puntosMaq=this.puntosMaq+1;
+              this.puntosUser=this.puntosUser+1;
+             this.jugo="piedra";
+         }
+          else if (this.opMaq=="papel")
+          {
+               this.puntosMaq = this.puntosMaq+1;
+              this.jugo="piedra";
+         }
+          else if (this.opMaq=="tijera")
+          {
+              this.puntosUser=this.puntosUser+1;
+          this.jugo="piedra";
+        }
+        }
+       if(quejuego=="papel")
+        {
+          if (this.opMaq=="piedra")
+          {
+              this.puntosUser=this.puntosUser+1;
+               this.jugo="papel";
+       }
+          else if (this.opMaq=="papel")
+          {
+               this.puntosMaq = this.puntosMaq+1;
+              this.puntosUser=this.puntosUser+1;
+          this.jugo="papel";
+        }
+          else if (this.opMaq=="tijera")
+          {
+               this.puntosMaq = this.puntosMaq+1;
+              this.jugo="papel";
+         }
+        }
+       if(quejuego=="tijera")
+        {
+          if (this.opMaq=="piedra")
+          {
+               this.puntosMaq = this.puntosMaq+1;
+               this.jugo="tijera";
+        }
+          else if (this.opMaq=="papel")
+          {
+              this.puntosUser=this.puntosUser+1;
+              this.jugo="tijera";
+        }
+          else if (this.opMaq=="tijera")
+          {
+               this.puntosMaq = this.puntosMaq+1;
+              this.puntosUser=this.puntosUser+1;
+              this.jugo="tijera";
+         }
+        }
+
+         if (this.opMaq=="piedra")
+          {
+            this.imgMaq="assets/img/piedra.png";
+            this.jugo="Piedra";
+         
+          }
+          else if (this.opMaq=="papel")
+          {
+            this.imgMaq="assets/img/papel.png";
+          this.jugo="Papel";
+        }
+          else if (this.opMaq =="tijera")
+          {
+            this.imgMaq="assets/img/tijera.png";
+         this.jugo="Tijera";
+         }
+
+          console.log("maq",this.puntosMaq);
+          console.log("user",this.puntosUser);
+    
+return this.opMaq;
 }
 
 }
