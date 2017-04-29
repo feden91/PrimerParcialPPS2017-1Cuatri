@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
-//import { ppot} from '../PiedraPapelOTijera/ppot';
+import { juegoPage } from '../juego/juego';
 
 @Component({
   selector: 'page-home',
@@ -24,6 +24,6 @@ Usuario
           this.user.push({
             nombre:this.usuario.nombre
          })
-         //this.navCtrl.push(ppot,this.usuario)  
+         this.navCtrl.push(juegoPage,this.usuario)  
         }
 }
