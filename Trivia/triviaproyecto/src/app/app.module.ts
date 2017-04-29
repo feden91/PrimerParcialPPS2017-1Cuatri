@@ -6,8 +6,6 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { juegoPage } from '../pages/juego/juego';
-import { juegoPage2 } from '../pages/juego2/juego2';
-import { juegoPage3 } from '../pages/juego3/juego3';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -31,9 +29,8 @@ apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
     MyApp,
     HomePage,
     ListPage,
-    juegoPage,
-    juegoPage2,
-    juegoPage3
+    juegoPage
+    
   ],
   imports: [
     BrowserModule,
@@ -45,9 +42,7 @@ apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
     MyApp,
     HomePage,
     ListPage,
-    juegoPage,
-    juegoPage2,
-    juegoPage3
+    juegoPage
   ],
   providers: [
     StatusBar,

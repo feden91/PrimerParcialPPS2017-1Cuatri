@@ -1,14 +1,35 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Trivia</ion-title>
-  </ion-navbar>
-</ion-header>
 
-<ion-content padding>
+  <ion-navbar class="navbarInicio">
+  <ion-title id="titulo">
+    Trivia 1
+  </ion-title>
+      </ion-navbar>
+      <div class="TextoInicio">
+   </div>
+  </ion-header>
+      
+      
   
- 
-  
-</ion-content>
+    <ion-content padding class="triviaUno">
+     <h2 align="center">{{trivia}}</h2>
+            <div align="center"><br>
+
+<br>
+<br>
+<br>
+<input type="submit" align="center" id="opcion1" (click) ="VerificarPregunta('1')">    
+<br>
+<br>
+<br>
+<input type="submit" align="center" id="opcion2" (click) ="VerificarPregunta('2')">
+<br>
+<br>
+<br>
+<input type="submit" align="center" id="opcion3" (click) ="VerificarPregunta('3')">
+       
+        
+        </div>
+
+    </ion-content>
+    
