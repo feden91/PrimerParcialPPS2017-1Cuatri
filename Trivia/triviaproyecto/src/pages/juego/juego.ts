@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
-
+import {ganastePage} from '../Ganaste/Ganaste';
 @Component({
   selector: 'page-juego',
   templateUrl: 'juego.html'
@@ -13,11 +13,15 @@ puntuacion: number;
 correctas: number;
 incorrectas:number;
  reCorrecta: number;
+ 
   usuario = { nombre:'',
         Puntuacion:0,
         Correctas:0,
         incorrectas:0,
-        gano:false};
+        gano:false
+     
+    
+    };
 
  
   constructor(public navCtrl: NavController, public NavParams: NavParams) {
@@ -28,6 +32,8 @@ incorrectas:number;
 
   ionViewDidLoad(){
 
+  
+    
     this.trivia = "¿En que año se desato la primera guerra mundial?";
     document.getElementById("opcion1").setAttribute("value","en 1949");
     document.getElementById("opcion2").setAttribute("value","en 1945");
@@ -39,6 +45,7 @@ incorrectas:number;
     this.incorrectas = 0;
   }
   preguntaDos(){
+     ;
      this.trivia = "¿Quien fue el mejor jugador del mundial de mexico 1986?";
     document.getElementById("opcion1").setAttribute("value","Romario");
     document.getElementById("opcion2").setAttribute("value","Maradona");
@@ -139,7 +146,7 @@ VerificarPregunta(respuesta){
         this.usuario.Puntuacion=this.puntuacion;
         this.usuario.incorrectas= this.incorrectas;
         this.usuario.Correctas = this.correctas;
-             // this.navCtrl.push(Ganador,this.usu)  
+            this.navCtrl.push(ganastePage,this.usuario)  
 
 
     }else{
@@ -148,7 +155,7 @@ VerificarPregunta(respuesta){
         this.usuario.Puntuacion=this.puntuacion;
         this.usuario.incorrectas= this.incorrectas;
         this.usuario.Correctas = this.correctas;
-              //this.navCtrl.push(Perdedor,this.usu)  
+              //this.navCtrl.push(Perdedor,this.usuario )  
       
     }
   }

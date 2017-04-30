@@ -4,16 +4,16 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
+
 import { juegoPage } from '../pages/juego/juego';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
+import { ganastePage } from '../pages/Ganaste/Ganaste';
 
-
-
+import { Estad } from '../pages/Estad/Estad';
 export const firebaseConfig =
  {  
 apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
@@ -28,7 +28,9 @@ apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
   declarations: [
     MyApp,
     HomePage,
-    ListPage,
+    ganastePage,
+    Estad,
+   
     juegoPage
     
   ],
@@ -41,7 +43,8 @@ apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,
+ ganastePage,
+ Estad,
     juegoPage
   ],
   providers: [
