@@ -14,6 +14,7 @@ import { AngularFireModule } from 'angularfire2';
 import { ganastePage } from '../pages/Ganaste/Ganaste';
 
 import { Estad } from '../pages/Estad/Estad';
+import {PerdistePage} from '../pages/Perdiste/Perdiste'
 export const firebaseConfig =
  {  
 apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
@@ -30,6 +31,7 @@ apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
     HomePage,
     ganastePage,
     Estad,
+    PerdistePage,
    
     juegoPage
     
@@ -44,6 +46,7 @@ apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
     MyApp,
     HomePage,
  ganastePage,
+ PerdistePage,
  Estad,
     juegoPage
   ],

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import {ganastePage} from '../Ganaste/Ganaste';
+import {PerdistePage} from '../Perdiste/Perdiste'
 @Component({
   selector: 'page-juego',
   templateUrl: 'juego.html'
@@ -34,7 +35,7 @@ incorrectas:number;
 
   
     
-    this.trivia = "¿En que año se desato la primera guerra mundial?";
+    this.trivia = "¿En que año se desato la Segunda Guerra Mundial?";
     document.getElementById("opcion1").setAttribute("value","en 1949");
     document.getElementById("opcion2").setAttribute("value","en 1945");
     document.getElementById("opcion3").setAttribute("value","en 1943");   
@@ -155,7 +156,7 @@ VerificarPregunta(respuesta){
         this.usuario.Puntuacion=this.puntuacion;
         this.usuario.incorrectas= this.incorrectas;
         this.usuario.Correctas = this.correctas;
-              //this.navCtrl.push(Perdedor,this.usuario )  
+           this.navCtrl.push(PerdistePage,this.usuario )  
       
     }
   }

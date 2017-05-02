@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { juegoPage } from '../pages/juego/juego';
 import { ganastePage } from '../pages/Ganaste/Ganaste';
 import {Estad} from '../pages/Estad/Estad';
+import {PerdistePage} from '../pages/Perdiste/Perdiste';
 @Component({
   templateUrl: 'app.html'
 })
