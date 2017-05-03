@@ -4,7 +4,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-
+import{AcercaDe} from '../pages/acerca-de/acerca-de';
 import { juegoPage } from '../pages/juego/juego';
 import { ganastePage } from '../pages/Ganaste/Ganaste';
 import {Estad} from '../pages/Estad/Estad';
@@ -26,7 +26,8 @@ export class MyApp {
     this.pages = [
       { title: 'Identificarse', component: HomePage },
       
-      { title: 'juego', component: juegoPage }
+      { title: 'Juego', component: juegoPage },
+      { title: 'Acerca De', component: AcercaDe }
     ];
 
   }

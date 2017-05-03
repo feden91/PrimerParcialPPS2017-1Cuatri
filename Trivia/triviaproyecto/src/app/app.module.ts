@@ -12,9 +12,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 import { ganastePage } from '../pages/Ganaste/Ganaste';
-
+import { NativeAudio } from '@ionic-native/native-audio';
 import { Estad } from '../pages/Estad/Estad';
-import {PerdistePage} from '../pages/Perdiste/Perdiste'
+import {PerdistePage} from '../pages/Perdiste/Perdiste';
+import {AcercaDe} from '../pages/acerca-de/acerca-de';
 export const firebaseConfig =
  {  
 apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
@@ -32,6 +33,7 @@ apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
     ganastePage,
     Estad,
     PerdistePage,
+    AcercaDe,
    
     juegoPage
     
@@ -48,11 +50,13 @@ apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
  ganastePage,
  PerdistePage,
  Estad,
+ AcercaDe,
     juegoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    NativeAudio,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

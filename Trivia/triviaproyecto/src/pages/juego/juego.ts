@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController,NavParams } from 'ionic-angular';
 import {ganastePage} from '../Ganaste/Ganaste';
 import {PerdistePage} from '../Perdiste/Perdiste'
+import { NativeAudio } from '@ionic-native/native-audio';
+
 @Component({
   selector: 'page-juego',
   templateUrl: 'juego.html'
@@ -25,9 +27,10 @@ incorrectas:number;
     };
 
  
-  constructor(public navCtrl: NavController, public NavParams: NavParams) {
+  constructor(public navCtrl: NavController, public NavParams: NavParams,private nativeAudio: NativeAudio) {
     this.usuario = NavParams.data;
-    
+    this.nativeAudio.preloadSimple('mal', 'assets/sounds/mal.mp3');
+          this.nativeAudio.preloadSimple('bien', 'assets/sounds/bien.mp3');
    
   }
 
@@ -77,11 +80,13 @@ VerificarPregunta(respuesta){
     if(this.preguntas == 1){
        if(respuesta == 3)
           {
+            this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
             this.puntuacion = this.puntuacion+1;
             this.preguntas = this.preguntas+1;
             this.correctas = this.correctas+1;
             this.preguntaDos();
           }else{
+            this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
             this.preguntas = this.preguntas+1;
             this.incorrectas = this.incorrectas+1;
             this.preguntaDos();
@@ -90,11 +95,13 @@ VerificarPregunta(respuesta){
        console.log("estoy en respuesta",respuesta);
              if(respuesta == 2)
                 {
+                   this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
                   this.puntuacion = this.puntuacion+1;
                   this.preguntas = this.preguntas+1;
                   this.correctas = this.correctas+1;
                   this.preguntaTres();
                 }else{
+                  this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
                   this.preguntas = this.preguntas+1;
                   this.incorrectas = this.incorrectas+1;
                   this.preguntaTres();
@@ -102,11 +109,13 @@ VerificarPregunta(respuesta){
      }else if (this.preguntas ==3){
              if(respuesta == 3)
                 {
+                  this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
                   this.puntuacion = this.puntuacion+1;
                   this.preguntas = this.preguntas+1;
                   this.correctas = this.correctas+1;
                 this.preguntaCuatro();
-                }else{
+              }else{
+                this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
                   this.preguntas = this.preguntas+1;
                   this.incorrectas = this.incorrectas+1;
                 this.preguntaCuatro();
@@ -115,11 +124,13 @@ VerificarPregunta(respuesta){
      }else if (this.preguntas ==4){
              if(respuesta == 1)
                 {
+                  this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
                   this.puntuacion = this.puntuacion+1;
                   this.preguntas = this.preguntas+1;
                   this.correctas = this.correctas+1;
                   this.preguntaCinco();
                 }else{
+                  this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
                   this.preguntas = this.preguntas+1;
                   this.incorrectas = this.incorrectas+1;
                   this.preguntaCinco();
@@ -128,11 +139,14 @@ VerificarPregunta(respuesta){
      }else if (this.preguntas ==5){
              if(respuesta == 3)
                 {
+
+                  this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
                   this.puntuacion = this.puntuacion+1;
                   this.preguntas = this.preguntas+1;
                   this.correctas = this.correctas+1;
                   this.GanoONo();
                  }else{
+                   this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
                    this.incorrectas = this.incorrectas+1;
                     this.GanoONo();
                 }
