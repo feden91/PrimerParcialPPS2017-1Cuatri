@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {Estadistica}from '../Estadistica/Estadistica';
+import {Ganaste} from '../Ganaste/Ganaste';
+import {Perdiste} from '../Perdiste/Perdiste';
+import {Empate} from '../Empate/Empate';
 @Component({
   selector: 'page-ppot',
   templateUrl: 'ppot.html'
@@ -90,23 +93,22 @@ this.ComprobarJuego(queJugo);
                 this.usuario.gano="Perdio";
                 this.jugo = "Perdiste";
                 
-                  this.Estadisticas();
-                
+                  this.navCtrl.push(Perdiste,this.usuario)  
+                this.vEstadisticas =true;
             }else if(this.puntosMaq < this.puntosUser){
                     console.log("Gano");
                 this.usuario.gano="Gano";
                 this.jugo = "Ganaste";
                 this.jugo = this.usuario.nombre;
-               this.Estadisticas();
-                
-                               
+               this.navCtrl.push(Ganaste,this.usuario)  
+                               this.vEstadisticas =true;
                 }else if(this.puntosMaq == this.puntosUser){
                     this.usuario.gano="Empato";
                     this.jugo = "Empataste"
                     
-                    this.Estadisticas();
+                   this.navCtrl.push(Empate,this.usuario) 
                                   
-                                   this.Estadisticas();
+                                   this.vEstadisticas =true;
                 }
           },2000);
 

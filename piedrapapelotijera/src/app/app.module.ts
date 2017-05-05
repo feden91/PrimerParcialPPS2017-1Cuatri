@@ -10,12 +10,19 @@ import { Estadistica} from '../pages/Estadistica/Estadistica';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {firebaseconfig} from '../pages/firebase/firebase-config';
+import {Ganaste} from '../pages/Ganaste/Ganaste';
+import {Perdiste} from '../pages/Perdiste/Perdiste';
+import {Empate }from '../pages/Empate/Empate';
+
 @NgModule({
   declarations: [
     MyApp,
     Identificarse,
     ppot,
     AcercaDe,
+    Ganaste,
+    Perdiste,
+    Empate,
     Estadistica
   ],
   imports: [
@@ -29,7 +36,10 @@ import {firebaseconfig} from '../pages/firebase/firebase-config';
     Identificarse,  
     ppot,
     AcercaDe,
-    Estadistica
+    Estadistica,
+    Perdiste,
+    Empate,
+    Ganaste
   ],
   providers: [
     StatusBar,
