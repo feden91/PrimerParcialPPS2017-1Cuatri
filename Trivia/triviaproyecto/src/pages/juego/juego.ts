@@ -3,7 +3,7 @@ import { NavController,NavParams } from 'ionic-angular';
 import {ganastePage} from '../Ganaste/Ganaste';
 import {PerdistePage} from '../Perdiste/Perdiste'
 import { NativeAudio } from '@ionic-native/native-audio';
-
+import { Vibration } from '@ionic-native/vibration';
 @Component({
   selector: 'page-juego',
   templateUrl: 'juego.html'
@@ -16,18 +16,27 @@ puntuacion: number;
 correctas: number;
 incorrectas:number;
  reCorrecta: number;
+        pregunta1:string;
  
   usuario = { nombre:'',
         Puntuacion:0,
         Correctas:0,
         incorrectas:0,
-        gano:false
-     
-    
+        gano:false,
+        pregunta1:'',
+        pregunta2:'',
+        pregunta3:'',
+pregunta4:'',
+     pregunta5:'',
+     respuesta1:'',
+    respuesta2:'',
+    respuesta3:'',
+    respuesta4:'',
+    respuesta5:''
     };
 
  
-  constructor(public navCtrl: NavController, public NavParams: NavParams,private nativeAudio: NativeAudio) {
+  constructor(public navCtrl: NavController, public NavParams: NavParams,private nativeAudio: NativeAudio,private vibration: Vibration) {
     this.usuario = NavParams.data;
     this.nativeAudio.preloadSimple('mal', 'assets/sound/mal.mp3');
           this.nativeAudio.preloadSimple('bien', 'assets/sound/bien.mp3');
@@ -79,13 +88,15 @@ VerificarPregunta(respuesta){
 
     if(this.preguntas == 1){
        if(respuesta == 3)
-          {
+          {this.vibration.vibrate(500);
             this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
             this.puntuacion = this.puntuacion+1;
             this.preguntas = this.preguntas+1;
             this.correctas = this.correctas+1;
+            this.pregunta1="¿En que año se desato la Segunda Guerra Mundial?";
             this.preguntaDos();
           }else{
+            this.vibration.vibrate([500,250,500]);
             this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
             this.preguntas = this.preguntas+1;
             this.incorrectas = this.incorrectas+1;
@@ -94,13 +105,14 @@ VerificarPregunta(respuesta){
      }else if (this.preguntas == 2){
        console.log("estoy en respuesta",respuesta);
              if(respuesta == 2)
-                {
+                {this.vibration.vibrate(500);
                    this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
                   this.puntuacion = this.puntuacion+1;
                   this.preguntas = this.preguntas+1;
                   this.correctas = this.correctas+1;
                   this.preguntaTres();
                 }else{
+                  this.vibration.vibrate([500,250,500]);
                   this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
                   this.preguntas = this.preguntas+1;
                   this.incorrectas = this.incorrectas+1;
@@ -108,13 +120,14 @@ VerificarPregunta(respuesta){
                 }
      }else if (this.preguntas ==3){
              if(respuesta == 3)
-                {
+                {this.vibration.vibrate(500);
                   this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
                   this.puntuacion = this.puntuacion+1;
                   this.preguntas = this.preguntas+1;
                   this.correctas = this.correctas+1;
                 this.preguntaCuatro();
               }else{
+                this.vibration.vibrate([500,250,500]);
                 this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
                   this.preguntas = this.preguntas+1;
                   this.incorrectas = this.incorrectas+1;
@@ -123,13 +136,14 @@ VerificarPregunta(respuesta){
 
      }else if (this.preguntas ==4){
              if(respuesta == 1)
-                {
+                {this.vibration.vibrate(500);
                   this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
                   this.puntuacion = this.puntuacion+1;
                   this.preguntas = this.preguntas+1;
                   this.correctas = this.correctas+1;
                   this.preguntaCinco();
                 }else{
+                  this.vibration.vibrate([500,250,500]);
                   this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
                   this.preguntas = this.preguntas+1;
                   this.incorrectas = this.incorrectas+1;
@@ -139,13 +153,14 @@ VerificarPregunta(respuesta){
      }else if (this.preguntas ==5){
              if(respuesta == 3)
                 {
-
+this.vibration.vibrate(500);
                   this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
                   this.puntuacion = this.puntuacion+1;
                   this.preguntas = this.preguntas+1;
                   this.correctas = this.correctas+1;
                   this.GanoONo();
                  }else{
+                   this.vibration.vibrate([500,250,500]);
                    this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
                    this.incorrectas = this.incorrectas+1;
                     this.GanoONo();

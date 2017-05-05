@@ -7,7 +7,7 @@ import { HomePage } from '../pages/home/home';
 
 import { juegoPage } from '../pages/juego/juego';
 
-
+import { Vibration } from '@ionic-native/vibration';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
@@ -57,6 +57,7 @@ apiKey: "AIzaSyC5uCx-QokHlXKdZqelIpaQEhoJ7sm1yfw",
     StatusBar,
     SplashScreen,
     NativeAudio,
+    Vibration,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
