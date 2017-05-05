@@ -1,9 +1,12 @@
+
+
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <h1>Ganaste!!</h1>
+  <ion-navbar class="navbarInicio">
+  
+    <ion-title id="titulo">GANASTE!!</ion-title>
+  </ion-navbar>
+  <div class="TextoInicio">
+      <h1>HAS GANADO!!</h1>
    </div>
 </ion-header>
 
@@ -11,6 +14,8 @@
 <ion-content padding class="Login">
     <h2 align="center">Felicitaciones: {{usuario.nombre}}  Has ganado el juego de trivias</h2>
     <p align="center"  class="texto">
-       <input type="submit" align="center" (click) ="Estadistica()" value="Estadistica">
+       <input type="submit" align="center" (click) ="Estadisticas()" value="Estadisticas">
 </p>
+   
 </ion-content>
+    

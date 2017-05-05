@@ -13,13 +13,14 @@ export class ppot {
  puntosMaq:number;
  puntuacion:any;
 gano:any;
-ramOpUser=["piedra","papel","tijera"];
+ramOpUser=["Piedra","Papel","Tijera"];
 opMaq:any;
 num:any;
 imgMaq:any;
 jugo:any;
 vJuego:boolean;
 vMaquina:boolean;
+vEstadisticas:boolean;
 rondas:number;
  jg:any;
   usuario = { nombre:'',
@@ -39,11 +40,11 @@ rondas:number;
 
 
   ionViewDidLoad(){
-    this.ronda = "preparese para jugar";
+    this.ronda = " A jugar!";
     this.puntosMaq=0;
     this.puntosUser=0;
-     this.imgMaq="assets/img/maquina.png";
-     this.jugo= "LA MAQUINA!"
+     this.imgMaq="assets/img/5.png";
+     this.jugo= "Juegue"
             this.rondas=0;
      setTimeout(()=>{
            this.ronda = "Primera ronda!";
@@ -52,7 +53,7 @@ rondas:number;
           },2000);
           console.info(this.rondas);
   }
-  maquina(queJugo){
+  boton(queJugo){
 this.vJuego=false;
 this.jugo = "La maquina jugo...";
 this.ComprobarJuego(queJugo);
@@ -60,14 +61,14 @@ this.ComprobarJuego(queJugo);
    setTimeout(()=>{
            this.ronda = "Segunda ronda!";
              
-     this.jugo= "LA MAQUINA!"
+     this.jugo= "Juegue"
             this.vJuego=true;
           },2000);
         }else  if(this.rondas==2){
    setTimeout(()=>{
            this.ronda = "Tercera ronda!";
              
-     this.jugo= "LA MAQUINA!"
+     this.jugo= "Juegue"
             this.vJuego=true;
           },2000);
 
@@ -75,7 +76,7 @@ this.ComprobarJuego(queJugo);
    setTimeout(()=>{
            this.ronda = "RONDA FINAL!!";
              
-     this.jugo= "LA MAQUINA!"
+     this.jugo= "Juegue"
             this.vJuego=true;
           },2000);
 
@@ -83,90 +84,113 @@ this.ComprobarJuego(queJugo);
    setTimeout(()=>{
            this.ronda = "FINAL DEL JUEGO!!";
              
-     this.jugo= "LA MAQUINA!"
-            this.vJuego=true;
+     this.jugo= "Juegue"
+            this.vJuego=true;if(this.puntosMaq> this.puntosUser)
+                {
+                this.usuario.gano="Perdio";
+                this.jugo = "Perdiste";
+                
+                  this.Estadisticas();
+                
+            }else if(this.puntosMaq < this.puntosUser){
+                    console.log("Gano");
+                this.usuario.gano="Gano";
+                this.jugo = "Ganaste";
+                this.jugo = this.usuario.nombre;
+               this.Estadisticas();
+                
+                               
+                }else if(this.puntosMaq == this.puntosUser){
+                    this.usuario.gano="Empato";
+                    this.jugo = "Empataste"
+                    
+                    this.Estadisticas();
+                                  
+                                   this.Estadisticas();
+                }
           },2000);
 
         }
 }
 
 ComprobarJuego(quejuego){
+  this.vEstadisticas=false;
   this.rondas=this.rondas+1;
  this.num = Math.floor(Math.random() * 3);  
  this.opMaq=this.ramOpUser[this.num];
  console.log(this.opMaq);
 
- if(quejuego=="piedra")
+ if(quejuego=="Piedra")
         {
-  // this.imgElect="assets/img/piedra.jpg";
-          if (this.opMaq=="piedra")
+   
+          if (this.opMaq=="Piedra")
           {
               this.puntosMaq=this.puntosMaq+1;
               this.puntosUser=this.puntosUser+1;
-             this.jugo="piedra";
+             this.jugo="Piedra";
          }
-          else if (this.opMaq=="papel")
+          else if (this.opMaq=="Papel")
           {
                this.puntosMaq = this.puntosMaq+1;
-              this.jugo="piedra";
+              this.jugo="Piedra";
          }
-          else if (this.opMaq=="tijera")
+          else if (this.opMaq=="Tijera")
           {
               this.puntosUser=this.puntosUser+1;
-          this.jugo="piedra";
+          this.jugo="Piedra";
         }
         }
-       if(quejuego=="papel")
+       if(quejuego=="Papel")
         {
-          if (this.opMaq=="piedra")
+          if (this.opMaq=="Piedra")
           {
               this.puntosUser=this.puntosUser+1;
-               this.jugo="papel";
+               this.jugo="Papel";
        }
-          else if (this.opMaq=="papel")
+          else if (this.opMaq=="Papel")
           {
                this.puntosMaq = this.puntosMaq+1;
               this.puntosUser=this.puntosUser+1;
           this.jugo="papel";
         }
-          else if (this.opMaq=="tijera")
+          else if (this.opMaq=="Tijera")
           {
                this.puntosMaq = this.puntosMaq+1;
               this.jugo="papel";
          }
         }
-       if(quejuego=="tijera")
+       if(quejuego=="Tijera")
         {
-          if (this.opMaq=="piedra")
+          if (this.opMaq=="Piedra")
           {
                this.puntosMaq = this.puntosMaq+1;
-               this.jugo="tijera";
+               this.jugo="Tijera";
         }
-          else if (this.opMaq=="papel")
+          else if (this.opMaq=="Papel")
           {
               this.puntosUser=this.puntosUser+1;
-              this.jugo="tijera";
+              this.jugo="Tijera";
         }
-          else if (this.opMaq=="tijera")
+          else if (this.opMaq=="Tijera")
           {
                this.puntosMaq = this.puntosMaq+1;
               this.puntosUser=this.puntosUser+1;
-              this.jugo="tijera";
+              this.jugo="Tijera";
          }
         }
 
-         if (this.opMaq=="piedra")
+         if (this.opMaq=="Piedra")
           {
             
             this.jugo="Piedra";
          
           }
-          else if (this.opMaq=="papel")
+          else if (this.opMaq=="Papel")
           {
             
           this.jugo="Papel";
         }
-          else if (this.opMaq =="tijera")
+          else if (this.opMaq =="Tijera")
           {
             
          this.jugo="Tijera";
@@ -174,7 +198,7 @@ ComprobarJuego(quejuego){
 
           console.log("maq",this.puntosMaq);
           console.log("user",this.puntosUser);
-    this.Estadisticas();
+    
 
 }
 Estadisticas(){
