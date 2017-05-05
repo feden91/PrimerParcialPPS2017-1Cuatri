@@ -6,6 +6,7 @@ import { MyApp } from './app.component';
 import { Identificarse } from '../pages/Identificarse/Identificarse';
 import { ppot } from '../pages/PiedraPapelOTijera/ppot';
 import { AcercaDe } from '../pages/acerca-de/acerca-de';
+import { Estadistica} from '../pages/Estadistica/Estadistica';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {firebaseconfig} from '../pages/firebase/firebase-config';
@@ -14,7 +15,8 @@ import {firebaseconfig} from '../pages/firebase/firebase-config';
     MyApp,
     Identificarse,
     ppot,
-    AcercaDe
+    AcercaDe,
+    Estadistica
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,8 @@ import {firebaseconfig} from '../pages/firebase/firebase-config';
     MyApp,
     Identificarse,  
     ppot,
-    AcercaDe
+    AcercaDe,
+    Estadistica
   ],
   providers: [
     StatusBar,

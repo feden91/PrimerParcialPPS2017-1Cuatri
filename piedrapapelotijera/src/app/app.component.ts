@@ -7,6 +7,9 @@ import { Identificarse } from '../pages/Identificarse/Identificarse';
 
 import { AcercaDe } from '../pages/acerca-de/acerca-de';
 import {ppot}from '../pages/PiedraPapelOTijera/ppot';
+import {Estadistica}from '../pages/Estadistica/Estadistica';
+import {Ganaste}from '../pages/Ganaste/Ganaste';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -25,6 +28,7 @@ export class MyApp {
       { title: 'Identificarse', component: Identificarse },
       { title: 'Piedra Papel o Tijera', component: ppot },
       { title: 'AcercaDe', component: AcercaDe }
+     
     ];
 
   }

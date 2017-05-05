@@ -29,8 +29,8 @@ incorrectas:number;
  
   constructor(public navCtrl: NavController, public NavParams: NavParams,private nativeAudio: NativeAudio) {
     this.usuario = NavParams.data;
-    this.nativeAudio.preloadSimple('mal', 'assets/sounds/mal.mp3');
-          this.nativeAudio.preloadSimple('bien', 'assets/sounds/bien.mp3');
+    this.nativeAudio.preloadSimple('mal', 'assets/sound/mal.mp3');
+          this.nativeAudio.preloadSimple('bien', 'assets/sound/bien.mp3');
    
   }
 

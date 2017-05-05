@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import {Estadistica}from '../Estadistica/Estadistica';
 @Component({
   selector: 'page-ppot',
   templateUrl: 'ppot.html'
@@ -26,7 +26,7 @@ rondas:number;
         Puntuacion:0,
         puntosUser:0,
         puntosMaq:0,
-        gano:false};
+        gano:""};
 
   // items: Array<{title: string}>;
  
@@ -157,25 +157,45 @@ ComprobarJuego(quejuego){
 
          if (this.opMaq=="piedra")
           {
-            this.imgMaq="assets/img/piedra.png";
+            
             this.jugo="Piedra";
          
           }
           else if (this.opMaq=="papel")
           {
-            this.imgMaq="assets/img/papel.png";
+            
           this.jugo="Papel";
         }
           else if (this.opMaq =="tijera")
           {
-            this.imgMaq="assets/img/tijera.png";
+            
          this.jugo="Tijera";
          }
 
           console.log("maq",this.puntosMaq);
           console.log("user",this.puntosUser);
-    
-return this.opMaq;
+    this.Estadisticas();
+
 }
+Estadisticas(){
+      
+    this.usuario.Puntuacion= this.puntosUser;
+    this.usuario.puntosMaq= this.puntosMaq;
+    this.usuario.puntosUser=this.puntosUser;
+    if(this.gano == false){
+    
+    this.usuario.gano="Perdio";
+    }else if(this.gano == "EMPATE"){
+        this.usuario.gano="Empato";
+    }else if(this.gano == true){
+    
+    this.usuario.gano="Gano";
+    }
+     setTimeout(() => {
+               this.navCtrl.push(Estadistica,this.usuario)  
+            }, 4000);
+    
+}
+
 
 }

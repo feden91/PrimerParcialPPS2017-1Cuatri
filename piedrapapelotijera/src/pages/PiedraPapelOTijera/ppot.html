@@ -8,7 +8,7 @@
 </ion-header>
 {{ronda}}
 <ion-content>
-    {{ronda}}
+    
     <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
       <ion-icon [name]="item.icon" item-left></ion-icon>
@@ -24,4 +24,5 @@
     <button ion-button full (click)="maquina('Piedra')">Piedra</button>
     <button ion-button color="danger" full (click)="maquina('Papel')">Papel</button>
     <button ion-button color="dark"  full (click)="maquina('Tijera')">Tijera</button>
+   
 </ion-content>
