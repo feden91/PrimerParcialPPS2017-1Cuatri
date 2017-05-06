@@ -11,7 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
 
-
+import { NativeAudio } from '@ionic-native/native-audio';
 
 export const firebaseConfig =
  {  
@@ -45,6 +45,7 @@ apiKey: "AIzaSyCkprC_-qjNg9-GdQssIFkV49-lQI6wzSI",
   providers: [
     StatusBar,
     SplashScreen,
+    NativeAudio,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
