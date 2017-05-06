@@ -8,6 +8,19 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AngularFireModule } from 'angularfire2';
+
+
+
+export const firebaseConfig =
+ {  
+apiKey: "AIzaSyCkprC_-qjNg9-GdQssIFkV49-lQI6wzSI",
+    authDomain: "bdteclado.firebaseapp.com",
+    databaseURL: "https://bdteclado.firebaseio.com",
+    projectId: "bdteclado",
+    storageBucket: "bdteclado.appspot.com",
+    messagingSenderId: "821691496395"
+ };
 
 @NgModule({
   declarations: [
@@ -18,6 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+     AngularFireModule.initializeApp(firebaseConfig),  
   ],
   bootstrap: [IonicApp],
   entryComponents: [
