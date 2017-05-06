@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
-
+import{teclado} from '../teclado/teclado';
 
 @Component({
   selector: 'page-home',
@@ -9,8 +9,8 @@ import {AngularFire, FirebaseListObservable} from 'angularfire2';
 })
 export class HomePage {
 usuario = { nombre:'',
-        Puntuacion:0,
-        gano:false};
+        
+       };
 
         user : FirebaseListObservable<any[]>;
 
@@ -24,6 +24,6 @@ Usuario
           this.user.push({
             nombre:this.usuario.nombre
          })
-         //this.navCtrl.push(juegoPage,this.usuario)  
+         this.navCtrl.push(teclado,this.usuario)  
         }
 }

@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import {teclado} from '../pages/teclado/teclado';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,7 +27,8 @@ apiKey: "AIzaSyCkprC_-qjNg9-GdQssIFkV49-lQI6wzSI",
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    teclado
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ apiKey: "AIzaSyCkprC_-qjNg9-GdQssIFkV49-lQI6wzSI",
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    teclado
   ],
   providers: [
     StatusBar,
