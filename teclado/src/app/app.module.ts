@@ -10,9 +10,9 @@ import {teclado} from '../pages/teclado/teclado';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
-
+import { File } from '@ionic-native/file';
 import { NativeAudio } from '@ionic-native/native-audio';
-
+import { Vibration } from '@ionic-native/vibration';
 export const firebaseConfig =
  {  
 apiKey: "AIzaSyCkprC_-qjNg9-GdQssIFkV49-lQI6wzSI",
@@ -46,6 +46,8 @@ apiKey: "AIzaSyCkprC_-qjNg9-GdQssIFkV49-lQI6wzSI",
     StatusBar,
     SplashScreen,
     NativeAudio,
+    Vibration,
+    File,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
