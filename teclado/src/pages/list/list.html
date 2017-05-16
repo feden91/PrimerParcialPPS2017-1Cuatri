@@ -3,21 +3,24 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Acerca De:</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+<ion-content class="AcercaDe">
+ <ion-card>
+  <img src="assets/img/1.jpg"/>
+  <ion-card-content>
+    <ion-card-title>
+     <h3>Nombre: Federico Nuñez</h3>
+      </ion-card-title>
+    <h1>
+     <h3>Github:feden91</h3>
+
+  <h3>www.github.com/feden91</h3>
+    </h1>
+  </ion-card-content>
+</ion-card> 
+
+  
 </ion-content>

@@ -6,7 +6,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import {teclado} from '../pages/teclado/teclado';
-
+import {enableProdMode} from '@angular/core';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AngularFireModule } from 'angularfire2';
@@ -48,6 +48,7 @@ apiKey: "AIzaSyCkprC_-qjNg9-GdQssIFkV49-lQI6wzSI",
     NativeAudio,
     Vibration,
     File,
+  
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
