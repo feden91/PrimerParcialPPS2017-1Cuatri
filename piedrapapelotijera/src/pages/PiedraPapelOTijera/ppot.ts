@@ -4,6 +4,8 @@ import {Estadistica}from '../Estadistica/Estadistica';
 import {Ganaste} from '../Ganaste/Ganaste';
 import {Perdiste} from '../Perdiste/Perdiste';
 import {Empate} from '../Empate/Empate';
+import { Vibration } from '@ionic-native/vibration';
+import { NativeAudio } from '@ionic-native/native-audio';
 @Component({
   selector: 'page-ppot',
   templateUrl: 'ppot.html'
@@ -34,7 +36,7 @@ rondas:number;
 
   // items: Array<{title: string}>;
  
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private vibration: Vibration,private nativeAudio: NativeAudio) {
     // If we navigated to this page, we will have an item available as a nav param
   
     // Let's populate this page with some filler content for funzies
@@ -50,7 +52,7 @@ rondas:number;
      this.jugo= "Juegue"
             this.rondas=0;
      setTimeout(()=>{
-           this.ronda = "Primera ronda!";
+           this.ronda = "1era ronda";
             this.vJuego=true;
             this.vMaquina =true;
           },2000);
@@ -62,14 +64,14 @@ this.jugo = "La maquina jugo...";
 this.ComprobarJuego(queJugo);
   if(this.rondas==1){
    setTimeout(()=>{
-           this.ronda = "Segunda ronda!";
+           this.ronda = "2da ronda";
              
      this.jugo= "Juegue"
             this.vJuego=true;
           },2000);
         }else  if(this.rondas==2){
    setTimeout(()=>{
-           this.ronda = "Tercera ronda!";
+           this.ronda = "3ra ronda";
              
      this.jugo= "Juegue"
             this.vJuego=true;
@@ -77,7 +79,7 @@ this.ComprobarJuego(queJugo);
 
         }else if(this.rondas==3){
    setTimeout(()=>{
-           this.ronda = "RONDA FINAL!!";
+           this.ronda = "4ta ronda";
              
      this.jugo= "Juegue"
             this.vJuego=true;
@@ -85,7 +87,7 @@ this.ComprobarJuego(queJugo);
 
         }else  if(this.rondas==4){
    setTimeout(()=>{
-           this.ronda = "FINAL DEL JUEGO!!";
+           this.ronda = "5ta ronda";
              
      this.jugo= "Juegue"
             this.vJuego=true;if(this.puntosMaq> this.puntosUser)
@@ -132,12 +134,12 @@ ComprobarJuego(quejuego){
              this.jugo="Piedra";
          }
           else if (this.opMaq=="Papel")
-          {
+          {this.vibration.vibrate(500);
                this.puntosMaq = this.puntosMaq+1;
               this.jugo="Piedra";
          }
           else if (this.opMaq=="Tijera")
-          {
+          {this.vibration.vibrate([500,250,500]);
               this.puntosUser=this.puntosUser+1;
           this.jugo="Piedra";
         }
@@ -145,7 +147,7 @@ ComprobarJuego(quejuego){
        if(quejuego=="Papel")
         {
           if (this.opMaq=="Piedra")
-          {
+          {this.vibration.vibrate(500);
               this.puntosUser=this.puntosUser+1;
                this.jugo="Papel";
        }
@@ -156,7 +158,7 @@ ComprobarJuego(quejuego){
           this.jugo="papel";
         }
           else if (this.opMaq=="Tijera")
-          {
+          {this.vibration.vibrate([500,250,500]);
                this.puntosMaq = this.puntosMaq+1;
               this.jugo="papel";
          }
@@ -164,12 +166,12 @@ ComprobarJuego(quejuego){
        if(quejuego=="Tijera")
         {
           if (this.opMaq=="Piedra")
-          {
+          {this.vibration.vibrate([500,250,500]);
                this.puntosMaq = this.puntosMaq+1;
                this.jugo="Tijera";
         }
           else if (this.opMaq=="Papel")
-          {
+          {this.vibration.vibrate(500);
               this.puntosUser=this.puntosUser+1;
               this.jugo="Tijera";
         }

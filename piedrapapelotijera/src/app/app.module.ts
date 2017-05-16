@@ -13,7 +13,8 @@ import {firebaseconfig} from '../pages/firebase/firebase-config';
 import {Ganaste} from '../pages/Ganaste/Ganaste';
 import {Perdiste} from '../pages/Perdiste/Perdiste';
 import {Empate }from '../pages/Empate/Empate';
-
+import { Vibration } from '@ionic-native/vibration';
+import { NativeAudio } from '@ionic-native/native-audio';
 @NgModule({
   declarations: [
     MyApp,
@@ -44,6 +45,8 @@ import {Empate }from '../pages/Empate/Empate';
   providers: [
     StatusBar,
     SplashScreen,
+    Vibration,
+    NativeAudio,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
