@@ -15,7 +15,7 @@ usuario = { nombre:'',
         user : FirebaseListObservable<any[]>;
 
   constructor(public navCtrl: NavController,af: AngularFire) {
-this.user= af.database.list('/Usuarios');
+this.user= af.database.list('/usuarios');
   }
 Usuario
 

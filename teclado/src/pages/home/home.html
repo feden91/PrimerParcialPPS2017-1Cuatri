@@ -8,14 +8,40 @@
   </ion-navbar>
 </ion-header>
 
- <ion-content  padding class="identificarse">
-   <div padding> 
-  <ion-item>
-  
-    <ion-label floating >Ingrese Nombre</ion-label>
-    <ion-input type="text" [(ngModel)] = "usuario.nombre"></ion-input>
-  </ion-item>
+ <ion-content   class="login-content">
+   
 
-<button ion-button color="dark"(click) ="Ingreso()" value="Jugar" round>Acceder</button>
-</div>
+<ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="assets/img/1.png"/>
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+    
+      <ion-row>
+        <ion-col>
+          <ion-list inset>
+            
+            <ion-item>
+              <ion-input type="text" placeholder="Nombre" name="email" [(ngModel)] = "usuario.nombre"></ion-input>
+            </ion-item>
+            
+          
+            
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn"(click) ="Ingreso()" value="Jugar" round>Acceder</button>
+         
+        </ion-col>
+      </ion-row>
+      
+  
+  </div>
+
 </ion-content>

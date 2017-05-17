@@ -18,9 +18,7 @@ this.nativeAudio.preloadSimple('mono', 'assets/sound/Mono.mp3');
   this.nativeAudio.preloadSimple('murcielago', 'assets/sound/Murcielago.mp3');
   this.nativeAudio.preloadSimple('pajaro', 'assets/sound/Pajaro.mp3');
   this.nativeAudio.preloadSimple('mosca', 'assets/sound/Mosca.mp3');
- this.file.removeFile(this.file.externalDataDirectory,"Boton1.php");
-  this.file.removeFile(this.file.externalDataDirectory,"Boton2.php");
-   this.file.removeFile(this.file.externalDataDirectory,"Boton3.php");
+ 
    this.num=0;
 }
 
