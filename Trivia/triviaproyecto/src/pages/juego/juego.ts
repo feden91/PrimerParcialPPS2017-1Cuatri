@@ -50,7 +50,7 @@ pregunta4:'',
     this.trivia = "¿En que año se desato la Segunda Guerra Mundial?";
     document.getElementById("opcion1").setAttribute("value","en 1949");
     document.getElementById("opcion2").setAttribute("value","en 1945");
-    document.getElementById("opcion3").setAttribute("value","en 1943");   
+    document.getElementById("opcion3").setAttribute("value","en 1939");   
     this.puntuacion = 0; 
     this.reCorrecta = 3;
     this.preguntas = 1;

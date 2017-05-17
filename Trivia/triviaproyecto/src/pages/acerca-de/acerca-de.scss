@@ -1,17 +1,16 @@
-page-AcercaDe {h2  {
-    box-shadow: 0px 1px 0px 0px rgb(255, 255, 255) inset;
-    background: rgb(255, 255, 255) linear-gradient(to bottom, rgb(255, 255, 255) 5%, rgb(246, 246, 246) 100%) repeat scroll 0% 0%;
+page-AcercaDe {h2  {    box-shadow: 0px 1px 0px 0px rgb(240, 247, 250);
+    background: rgb(51, 189, 239) linear-gradient(to bottom, rgb(51, 189, 239) 5%, rgb(1, 154, 210) 100%) repeat scroll 0% 0%;
     border-radius: 6px;
-    border: 1px solid rgb(220, 220, 220);
+    border: 1px solid rgb(5, 127, 208);
     display: inline-block;
     cursor: pointer;
-    color: rgb(102, 102, 102);
+    color: rgb(255, 255, 255);
     font-family: Arial;
-    font-size: 17px;
+    font-size: 13px;
     font-weight: bold;
-    padding: 20px 76px;
+    padding: 4px 12px;
     text-decoration: none;
-    text-shadow: 0px 1px 0px rgb(255, 255, 255);
-}.acercade{background-image: url('../assets/img/6.png')}
+    text-shadow: 0px -1px 0px rgb(91, 97, 120);
+}.acercade{background-color:#000;}
 
 }
