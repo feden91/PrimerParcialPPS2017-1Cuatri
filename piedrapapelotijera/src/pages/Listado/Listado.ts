@@ -3,7 +3,7 @@ import 'rxjs/Rx';
 import { NavController,ViewController } from 'ionic-angular';
 import {AngularFire, FirebaseListObservable} from 'angularfire2';
 import { ppot } from '../ppot/ppot';
-import { NativeAudio } from '@ionic-native/native-audio';
+
 import { ModalController } from 'ionic-angular';
 import {List} from '../List/List';
 
@@ -19,7 +19,7 @@ UsuEmpato : FirebaseListObservable<any[]>;
 
 
  constructor(public navCtrl: NavController,af: AngularFire,public viewCtrl:
-  ViewController,private nativeAudio: NativeAudio,public modalCtrl: ModalController) {
+  ViewController,public modalCtrl: ModalController) {
   this.UsuGano= af.database.list('/Usuarios', {
   query: {
     orderByChild: 'Gano',

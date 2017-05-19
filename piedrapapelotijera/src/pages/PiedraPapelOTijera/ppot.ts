@@ -238,15 +238,7 @@ Estadisticas(){
     this.usuario.puntosMaq= this.puntosMaq;
     this.usuario.puntosUser=this.puntosUser;
     
-    if(this.gano == false){
     
-    this.usuario.gano="Perdio";
-    }else if(this.gano == "EMPATE"){
-        this.usuario.gano="Empato";
-    }else if(this.gano == true){
-    
-    this.usuario.gano="Gano";
-    }
      setTimeout(() => {
                this.navCtrl.push(Estadistica,this.usuario)  
             }, 4000);
