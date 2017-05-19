@@ -10,9 +10,7 @@ import { Estadistica} from '../pages/Estadistica/Estadistica';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {firebaseconfig} from '../pages/firebase/firebase-config';
-import {Ganaste} from '../pages/Ganaste/Ganaste';
-import {Perdiste} from '../pages/Perdiste/Perdiste';
-import {Empate }from '../pages/Empate/Empate';
+
 import { Vibration } from '@ionic-native/vibration';
 import { NativeAudio } from '@ionic-native/native-audio';
 @NgModule({
@@ -21,9 +19,7 @@ import { NativeAudio } from '@ionic-native/native-audio';
     Identificarse,
     ppot,
     AcercaDe,
-    Ganaste,
-    Perdiste,
-    Empate,
+  
     Estadistica
   ],
   imports: [
@@ -37,10 +33,7 @@ import { NativeAudio } from '@ionic-native/native-audio';
     Identificarse,  
     ppot,
     AcercaDe,
-    Estadistica,
-    Perdiste,
-    Empate,
-    Ganaste
+    Estadistica
   ],
   providers: [
     StatusBar,

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 import {Estadistica}from '../Estadistica/Estadistica';
-import {Ganaste} from '../Ganaste/Ganaste';
-import {Perdiste} from '../Perdiste/Perdiste';
-import {Empate} from '../Empate/Empate';
+
 import { Vibration } from '@ionic-native/vibration';
 import { NativeAudio } from '@ionic-native/native-audio';
 @Component({
@@ -12,6 +10,7 @@ import { NativeAudio } from '@ionic-native/native-audio';
 
 })
 export class ppot {
+  nombre:any;
   ronda:any;
  cantRondas:any;
  puntosUser:number;
@@ -28,19 +27,21 @@ vMaquina:boolean;
 vEstadisticas:boolean;
 rondas:number;
  jg:any;
+ Fecha:any;
   usuario = { nombre:'',
         Puntuacion:0,
         puntosUser:0,
         puntosMaq:0,
+        Fecha:0,
         gano:""};
 
   // items: Array<{title: string}>;
  
-  constructor(public navCtrl: NavController, public navParams: NavParams,private vibration: Vibration,private nativeAudio: NativeAudio) {
-    // If we navigated to this page, we will have an item available as a nav param
-  
-    // Let's populate this page with some filler content for funzies
-      
+  constructor(public navCtrl: NavController, public NavParams: NavParams,private vibration: Vibration,private nativeAudio: NativeAudio) {
+ this.usuario = NavParams.data;
+  this.nativeAudio.preloadSimple('mal', 'assets/sound/mal.mp3');
+          this.nativeAudio.preloadSimple('bien', 'assets/sound/bien.mp3');
+            this.nativeAudio.preloadSimple('empate', 'assets/sound/empate.mp3');
 }
 
 
@@ -95,25 +96,28 @@ this.ComprobarJuego(queJugo);
                 this.usuario.gano="Perdio";
                 this.jugo = "Perdiste";
                 
-                  this.navCtrl.push(Perdiste,this.usuario)  
+                  
                 this.vEstadisticas =true;
+             
             }else if(this.puntosMaq < this.puntosUser){
                     console.log("Gano");
                 this.usuario.gano="Gano";
                 this.jugo = "Ganaste";
                 this.jugo = this.usuario.nombre;
-               this.navCtrl.push(Ganaste,this.usuario)  
+                
                                this.vEstadisticas =true;
+                             
                 }else if(this.puntosMaq == this.puntosUser){
                     this.usuario.gano="Empato";
                     this.jugo = "Empataste"
                     
-                   this.navCtrl.push(Empate,this.usuario) 
+                   
                                   
                                    this.vEstadisticas =true;
+                                 
                 }
           },2000);
-
+this.Estadisticas();
         }
 }
 
@@ -128,18 +132,25 @@ ComprobarJuego(quejuego){
         {
    
           if (this.opMaq=="Piedra")
-          {
+          { this.vibration.vibrate(400);
+            this.nativeAudio.play('empate', () => console.log('bienvenida is done playing'));
               this.puntosMaq=this.puntosMaq+1;
               this.puntosUser=this.puntosUser+1;
              this.jugo="Piedra";
          }
           else if (this.opMaq=="Papel")
-          {this.vibration.vibrate(500);
+          {
+            this.vibration.vibrate([500,250,500]);
+            this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
+            
+            this.vibration.vibrate(500);
                this.puntosMaq = this.puntosMaq+1;
               this.jugo="Piedra";
          }
           else if (this.opMaq=="Tijera")
-          {this.vibration.vibrate([500,250,500]);
+          {
+           this.vibration.vibrate(500);
+            this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
               this.puntosUser=this.puntosUser+1;
           this.jugo="Piedra";
         }
@@ -147,18 +158,27 @@ ComprobarJuego(quejuego){
        if(quejuego=="Papel")
         {
           if (this.opMaq=="Piedra")
-          {this.vibration.vibrate(500);
+          {
+            this.vibration.vibrate(500);
+            this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
+            this.vibration.vibrate(500);
               this.puntosUser=this.puntosUser+1;
                this.jugo="Papel";
        }
           else if (this.opMaq=="Papel")
           {
+            this.vibration.vibrate(400);
+            this.nativeAudio.play('empate', () => console.log('bienvenida is done playing'));
                this.puntosMaq = this.puntosMaq+1;
               this.puntosUser=this.puntosUser+1;
           this.jugo="papel";
         }
           else if (this.opMaq=="Tijera")
-          {this.vibration.vibrate([500,250,500]);
+          {
+            this.vibration.vibrate([500,250,500]);
+            this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
+            
+            this.vibration.vibrate([500,250,500]);
                this.puntosMaq = this.puntosMaq+1;
               this.jugo="papel";
          }
@@ -167,16 +187,22 @@ ComprobarJuego(quejuego){
         {
           if (this.opMaq=="Piedra")
           {this.vibration.vibrate([500,250,500]);
+            this.nativeAudio.play('mal', () => console.log('bienvenida is done playing'));
                this.puntosMaq = this.puntosMaq+1;
                this.jugo="Tijera";
         }
           else if (this.opMaq=="Papel")
-          {this.vibration.vibrate(500);
+          {
+            this.vibration.vibrate(500);
+            this.nativeAudio.play('bien', () => console.log('bienvenida is done playing'));
+            
+            this.vibration.vibrate(500);
               this.puntosUser=this.puntosUser+1;
               this.jugo="Tijera";
         }
           else if (this.opMaq=="Tijera")
-          {
+          { this.vibration.vibrate(400);
+            this.nativeAudio.play('empate', () => console.log('bienvenida is done playing'));
                this.puntosMaq = this.puntosMaq+1;
               this.puntosUser=this.puntosUser+1;
               this.jugo="Tijera";
@@ -212,12 +238,12 @@ Estadisticas(){
     this.usuario.puntosUser=this.puntosUser;
     if(this.gano == false){
     
-    this.usuario.gano="Perdio";
+    this.usuario.gano="Perdiste";
     }else if(this.gano == "EMPATE"){
-        this.usuario.gano="Empato";
+        this.usuario.gano="Empataste";
     }else if(this.gano == true){
     
-    this.usuario.gano="Gano";
+    this.usuario.gano="Ganaste";
     }
      setTimeout(() => {
                this.navCtrl.push(Estadistica,this.usuario)  

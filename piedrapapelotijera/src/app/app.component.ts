@@ -8,9 +8,7 @@ import { Identificarse } from '../pages/Identificarse/Identificarse';
 import { AcercaDe } from '../pages/acerca-de/acerca-de';
 import {ppot}from '../pages/PiedraPapelOTijera/ppot';
 import {Estadistica}from '../pages/Estadistica/Estadistica';
-import {Ganaste}from '../pages/Ganaste/Ganaste';
-import {Perdiste} from '../pages/Perdiste/Perdiste';
-import {Empate} from '../pages/Empate/Empate';
+
 
 @Component({
   templateUrl: 'app.html'

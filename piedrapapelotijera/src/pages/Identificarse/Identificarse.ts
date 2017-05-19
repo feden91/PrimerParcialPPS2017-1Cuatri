@@ -21,9 +21,10 @@ Usuario
 
          Ingreso(){
            
-          this.user.push({
+            this.user.push({
             nombre:this.usuario.nombre
          })
+          
          this.navCtrl.push(ppot,this.usuario)  
         }
 }
