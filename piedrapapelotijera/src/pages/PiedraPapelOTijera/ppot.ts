@@ -27,12 +27,11 @@ vMaquina:boolean;
 vEstadisticas:boolean;
 rondas:number;
  jg:any;
- Fecha:any;
+
   usuario = { nombre:'',
         Puntuacion:0,
         puntosUser:0,
         puntosMaq:0,
-        Fecha:0,
         gano:""};
 
   // items: Array<{title: string}>;
@@ -42,6 +41,7 @@ rondas:number;
   this.nativeAudio.preloadSimple('mal', 'assets/sound/mal.mp3');
           this.nativeAudio.preloadSimple('bien', 'assets/sound/bien.mp3');
             this.nativeAudio.preloadSimple('empate', 'assets/sound/empate.mp3');
+           
 }
 
 
@@ -233,9 +233,11 @@ ComprobarJuego(quejuego){
 }
 Estadisticas(){
       
+      
     this.usuario.Puntuacion= this.puntosUser;
     this.usuario.puntosMaq= this.puntosMaq;
     this.usuario.puntosUser=this.puntosUser;
+    
     if(this.gano == false){
     
     this.usuario.gano="Perdiste";
