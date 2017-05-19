@@ -8,8 +8,8 @@ import { Identificarse } from '../pages/Identificarse/Identificarse';
 import { AcercaDe } from '../pages/acerca-de/acerca-de';
 import {ppot}from '../pages/PiedraPapelOTijera/ppot';
 import {Estadistica}from '../pages/Estadistica/Estadistica';
-
-
+import{Listado} from '../pages/Listado/Listado';
+import{List} from '../pages/List/List';
 @Component({
   templateUrl: 'app.html'
 })
@@ -26,7 +26,7 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Identificarse', component: Identificarse },
-      { title: 'Piedra Papel o Tijera', component: ppot },
+      { title: 'Listado', component: Listado },
       { title: 'AcercaDe', component: AcercaDe }
      
     ];

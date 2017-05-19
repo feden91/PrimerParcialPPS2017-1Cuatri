@@ -10,17 +10,21 @@ import { Estadistica} from '../pages/Estadistica/Estadistica';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {firebaseconfig} from '../pages/firebase/firebase-config';
-
+import {Listado} from '../pages/Listado/Listado';
+import{List} from '../pages/List/List';
 import { Vibration } from '@ionic-native/vibration';
 import { NativeAudio } from '@ionic-native/native-audio';
+
 @NgModule({
   declarations: [
     MyApp,
     Identificarse,
     ppot,
     AcercaDe,
-  
-    Estadistica
+    Listado,
+   
+    Estadistica,
+     List
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { NativeAudio } from '@ionic-native/native-audio';
     Identificarse,  
     ppot,
     AcercaDe,
-    Estadistica
+    Listado,
+    Estadistica,
+    List
   ],
   providers: [
     StatusBar,
