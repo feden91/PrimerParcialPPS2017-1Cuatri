@@ -91,7 +91,8 @@ this.ComprobarJuego(queJugo);
            this.ronda = "5ta ronda";
              
      this.jugo= "Juegue"
-            this.vJuego=true;if(this.puntosMaq> this.puntosUser)
+            this.vJuego=true;
+            if(this.puntosMaq > this.puntosUser)
                 {
                 this.usuario.gano="Perdio";
                 this.jugo = "Perdiste";

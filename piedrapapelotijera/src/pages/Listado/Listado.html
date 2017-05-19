@@ -1,6 +1,9 @@
 <ion-header>
   <ion-navbar class="navbarInicio">
   
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title id="titulo">Listado</ion-title>
   </ion-navbar>
   <div class="TextoInicio" >
@@ -9,15 +12,15 @@
 </ion-header>
 <ion-content padding class="listado">
 <div align="center"   class="texto">
-   <a ion-item (click)="AbrirModal('Gano')">
+   <h2 ion-item (click)="AbrirModal('Gano')">
       Ganadores
-    </a>
-    <a ion-item (click)="AbrirModal('Perdio')">
+    </h2>
+    <h2 ion-item (click)="AbrirModal('Perdio')">
       Perdedores
-    </a>
-    <a ion-item (click)="AbrirModal('Empato')">
+    </h2>
+    <h2 ion-item (click)="AbrirModal('Empato')">
       Empatados
-    </a>
+    </h2>
 </div>
 
 
